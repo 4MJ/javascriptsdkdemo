@@ -1,0 +1,102 @@
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 col-sm-4 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h3>Welcome</h3>
+      <p>SevenAdvancedAcademy</p>
+    </div>
+
+    <div class="col-md-9 register-right">
+
+      <div class="tab-content" id="myTabContent">
+
+        <!-- for student registration *** by default this rendered because of the class active on the first div -->
+
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="register-heading"> Register Students on our Management System </h3>
+
+          <form action="/students/register" multimedia="true" method="post">
+            <div class="row register-form">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="firstName" placeholder="First Name *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="lastName" placeholder="Last Name *" value="" />
+                </div>
+                <div class="form-group">
+                  <div class="maxl">
+                    <label for="level">Level:</label>
+                    <select name="level">
+                      <option value="level1">Level 1</option>
+                      <option value="level2">Level 2</option>
+                      <option value="level3">Level 3</option>
+                      <option value="level4">Level 4</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="date" class="form-control" name="date" placeholder="Date Of Birth *" value="" />
+                </div>
+                <div class="form-group">
+                  <div class="maxl">
+                    <label class="radio inline">
+                      <input type="radio" name="gender" value="male" checked>
+                      <span> Male </span>
+                    </label>
+                    <label class="radio inline">
+                      <input type="radio" name="gender" value="female">
+                      <span>Female </span>
+                    </label>
+                  </div>
+                </div>
+                <input type="button" class="open-dialog-btn payRegistration" value="Pay Registration" />
+              </div>
+
+              <div class="col-md-6">
+
+                <div class="form-group">
+                  <div class="maxl">
+                    <label for="course">Course:</label>
+                    <select name="course">
+                      <option value="webDev">Full Stack Web Development</option>
+                      <option value="digitalMarketing">Digital Marketing</option>
+                      <option value="andriod">Andriod Development</option>
+                      <option value="itSecurity">IT Security</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" minlength="9" maxlength="9" name="txtEmpPhone" class="form-control"
+                    placeholder="Your Phone *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="number/text" class="form-control" placeholder="matricule *" value="" />
+                  <input type="text" minlength="10" maxlength="10" name="phone" class="form-control"
+                    placeholder="Your Phone *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="file" class="form-control" name="image" placeholder="upload image *" value="" />
+                </div>
+
+                <div class="form-group">
+                  <input type="password" class="form-control" name="password" placeholder="Password *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password *"
+                    value="" />
+                </div>
+                <input type="submit" class="btnRegister" value="Register" />
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
