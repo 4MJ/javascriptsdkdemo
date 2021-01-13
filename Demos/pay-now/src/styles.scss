@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+section#payUnit * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    outline: none;
+}
+body {
+    position: relative !important;
+}
+
+body.overlay{
+  height: 100vh;
+  overflow: hidden;
+}
+
+section#payUnit {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(1 36 34 / 0.60);
+    // display: flex;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+section#payUnit.inn {
+  display: flex;
+}
+
+section#payUnit span.open-dialog-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 50px;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    color: #fff;
+    background: #13a59c;
+    border-radius: 5px;
+}
+
+/* payment dialog */
+section#payUnit .payment-dialog {
+    /* position: absolute;
+    top: 10%;
+    opacity: 0; */
+    /* pointer-events: none; */
+    background: #eaeaea;
+    // display: flex;
+    height: 250px;
+    width: 320px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px #898989;
+    position: relative;
+    transition: all ease-in-out 0.7s;
+}
+
+/* section#payUnit .payment-dialog.open {
+    opacity: 1;
+    pointer-events: visible;
+} */
+
+section#payUnit .payment-dialog .payment-header {
+    padding: 20px 20px 0px;
+    text-align: center;
+}
+
+section#payUnit .payment-dialog .payment-header h1.payunit-title {
+    font: 600 1.2rem 'Montserrat';
+    color: #13a59c;
+    margin-bottom: 0.5rem;
+}
+
+section#payUnit .payment-dialog .payment-header p.punit-msg {
+    font: 500 0.85rem 'Montserrat';
+    color: #777;
+}
+
+section#payUnit .payment-dialog .payment-container {
+    /* position: relative; */
+    padding: 20px;
+    /* height: 80%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+section#payUnit .payment-dialog .payment-container .submit-form {
+    position: absolute;
+    bottom: 16%;
+    right: 7.5%;
+}
+
+section#payUnit .payment-dialog .payment-container .payunit-close-btn {
+    position: absolute;
+    top: -8%;
+    right: -8%;
+    color: #f3940b;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+}
+section#payUnit .payment-dialog .payment-container .input-row .payunit-processing {
+    position: absolute;
+    bottom: 19.2%;
+    /* right: 6.5%; */
+    color: #f3940b;
+    animation: spin 1s linear infinite;
+}
+section#payUnit .payment-dialog .payment-container .input-row .payunit-processing::after {
+    content: '\f110';
+    font: 900 1.5rem 'Font Awesome 5 Free';
+    color: inherit
+}
+
+section#payUnit .payment-dialog .payment-container .payunit-processing {
+    position: absolute;
+    bottom: 11.2%;
+    right: 13.5%;
+    color: #f3940b;
+    animation: spin 1s linear infinite;
+}
+
+section#payUnit .payment-dialog .payment-container .payunit-processing::after {
+    content: '\f110';
+    font: 900 1.5rem 'Font Awesome 5 Free';
+    color: inherit
+}
+
+section#payUnit .payment-dialog .payment-container .payunit-close-btn:hover {
+    color: #13a59c;
+}
+
+section#payUnit .payment-dialog .payment-container .payunit-close-btn::after {
+    content: '\f057';
+    font: 900 1.5rem 'Font Awesome 5 Free';
+    color: inherit
+}
+
+section#payUnit .payment-dialog .payment-container .submit-form {
+    position: absolute;
+    bottom: 10%;
+    right: 7%;
+}
+
+section#payUnit .payment-dialog .payment-container .submit-form input[type="submit"] {
+    font: 600 0.8rem 'Montserrat';
+    color: #13a59c;
+    border: 1px solid #13a59c;
+    padding: 0.4rem;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all ease-in-out 0.7s;
+}
+
+section#payUnit .payment-dialog .payment-container .submit-form input[type="submit"]:hover {
+    color: #777;
+    border: 1px solid #777;
+}
+
+section#payUnit .payment-dialog .payment-container .submit-form input[type="submit"].inn {
+    opacity: 1;
+    pointer-events: visible;
+}
+
+section#payUnit .payment-dialog .payment-container .merchant-logo {
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    height: fit-content;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+section#payUnit .payment-dialog .payment-container .merchant-logo img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process {
+    height: 34px;
+    position: relative;
+    left: -3px;
+    width: 190px;
+    background: #fff;
+    border-radius: 0px 5px 5px 0px;
+    overflow: hidden;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block {
+    position: relative;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block.processing,
+section#payUnit .payment-dialog .payment-container .submit-form input[type="submit"].processing,
+section#payUnit .payment-dialog .payment-container .payunit-close-btn.processing {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    padding: 0 5px;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row.paymedium-row {
+    transform: translateX(-100%);
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row.paymedium-row.inn {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row.name-row {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row.name-row.inn {
+    pointer-events: visible;
+    opacity: 1;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row.phone-row {
+    transform: translateX(100%);
+    position: absolute;
+    top: 0;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row.phone-row.inn {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row.phone-row { 
+    flex-direction: row-reverse;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row select {
+    display: inline-block;
+    flex: 4;
+    width: 150px;
+    border: none;
+    height: 25px;
+    padding: 0 0.1rem;
+    font: 500 0.9rem 'Montserrat';
+    color: #777;
+    background: #fff;
+    overflow: hidden;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row input {
+    display: inline-block;
+    flex: 6;
+    border: none;
+    height: 25px;
+    padding: 0 0.4rem;
+    font: 500 0.9rem 'Montserrat';
+    color: #777;
+    overflow: hidden;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row input::placeholder {
+    font: 500 0.9rem 'Montserrat';
+    color: #b3b3b3;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row span {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    color: #777;
+    cursor: pointer;
+    transition: all linear 0.5s;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row span:hover {
+    color: #13a59c;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row span.prev-arrow::after {
+    content: '\f060';
+    font: 900 0.9rem 'Font Awesome 5 Free';
+    color: inherit;
+}
+
+section#payUnit .payment-dialog .payment-container .payment-process .form-block .input-row span.next-arrow::after {
+    content: '\f061';
+    font: 900 0.9rem 'Font Awesome 5 Free';
+    color: inherit
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
