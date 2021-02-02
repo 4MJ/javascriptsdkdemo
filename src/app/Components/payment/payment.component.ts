@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { PayUnit } from "../../../../node_modules/payunitjs-test";
-import { environment } from "../../../environments/environment.prod";
+import { environment } from 'src/environments/environment';
+import { PayUnit } from '../../../../node_modules/payunitjs-test';
+
 
 @Component({
   selector: 'app-payment',
@@ -13,15 +14,15 @@ export class PaymentComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit(): void {
-   
-    let pu = PayUnit({
+
+    PayUnit({
       merchantName: environment.merchantName,
       merchantLogo: environment.merchantLogo,
       styles: environment.styles
     }, {
-      apiUsername:environment.apiUsername,
-      apiPassword:environment.apiPassword,
-      x_api_key:environment.x_api_key,
+      apiUsername: environment.apiUsername,
+      apiPassword: environment.apiPassword,
+      x_api_key: environment.x_api_key,
       mode: environment.mode
     }, {
       return_url: environment.return_url,
@@ -32,7 +33,7 @@ export class PaymentComponent implements AfterViewInit {
       amount: environment.amount,
       name: environment.name
     });
-    
+
   }
 
 

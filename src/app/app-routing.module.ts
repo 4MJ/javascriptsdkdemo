@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { PaymentComponent } from './Components/payment/payment.component';
 
 const routes: Routes = [
-  {path: "payment", component: PaymentComponent}
+  {path: '', redirectTo: 'payment',pathMatch: 'full',},
+  { path: "payment", component: PaymentComponent }
 ];
 
 @NgModule({

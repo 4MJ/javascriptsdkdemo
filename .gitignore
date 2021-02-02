@@ -4,6 +4,8 @@
 /dist
 /tmp
 /out-tsc
+/environments/environment.ts
+sonar-project.properties
 # Only exists if Bazel was run
 /bazel-out
 

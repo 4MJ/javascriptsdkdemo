@@ -11,7 +11,7 @@ export const environment = {
   apiPassword:'c1968535-1322-40f1-abf2-6ebba10e307d',
   x_api_key:'8fed05e7e34c97afc6332a121cc12d8beb87c635',
   mode: 'test',
-  return_url: "http://192.168.100.79:4500/payment",
+  return_url: "http://192.168.100.193/sdk/payment",
   notify_url: "http://192.168.100.10/seven-payunit-sandbox/notify",
   description: "Online payment of registration",
   purchaseRef: "7dg87sfd8adasf8798",
