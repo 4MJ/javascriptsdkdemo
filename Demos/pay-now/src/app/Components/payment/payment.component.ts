@@ -27,6 +27,7 @@ export class PaymentComponent implements AfterViewInit {
       return_url: environment.return_url,
       notify_url: environment.notify_url,
       description: environment.description,
+      currency: environment.currency,
       purchaseRef: environment.purchaseRef,
       total_amount: environment.total_amount,
       amount: environment.amount,
