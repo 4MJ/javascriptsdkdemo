@@ -11,12 +11,14 @@ export const environment = {
   apiPassword:'c1968535-1322-40f1-abf2-6ebba10e307d',
   x_api_key:'8fed05e7e34c97afc6332a121cc12d8beb87c635',
   mode: 'test',
-  return_url: "http://192.168.100.79:4500/payment",
+  
+  return_url: "http://192.168.100.79:4200/payment",
   notify_url: "http://192.168.100.10/seven-payunit-sandbox/notify",
+  currency: "XAF",
   description: "Online payment of registration",
   purchaseRef: "7dg87sfd8adasf8798",
-  total_amount: "100",
-  amount: "100",
+  total_amount: "500",
+  amount: "500",
   name: "Seven Student Manager"
 };
 
