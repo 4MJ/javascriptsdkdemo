@@ -15,7 +15,7 @@
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <h3 class="register-heading"> Register Students on our Management System </h3>
 
-          <form action="/students/register" multimedia="true" method="post">
+          <form action="/students/register" multimedia="true" method="post" [formGroup]="makeRegistration" (ngSubmit)="getAmount()">
             <div class="row register-form">
               <div class="col-md-6">
                 <div class="form-group">
@@ -53,7 +53,10 @@
                     </label>
                   </div>
                 </div>
-                <input type="button" class="open-dialog-btn payRegistration" value="Pay Registration" />
+                <div class="form-group">
+                  <input type="number" class="form-control" name="amount" formControlName="amount" placeholder="Amount" />
+                </div>
+                <input type="submit"  class="open-dialog-btn payRegistration" value="Pay Registration" />
               </div>
 
               <div class="col-md-6">

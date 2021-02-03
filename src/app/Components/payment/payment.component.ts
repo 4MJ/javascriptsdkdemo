@@ -1,6 +1,7 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { PayUnit } from '../../../../node_modules/payunitjs-test';
+import { FormGroup, Validators, FormBuilder, AbstractControl, ValidatorFn } from '@angular/forms';
 
 
 @Component({
@@ -8,12 +9,22 @@ import { PayUnit } from '../../../../node_modules/payunitjs-test';
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.scss']
 })
-export class PaymentComponent implements AfterViewInit {
+export class PaymentComponent implements OnInit {
+  amount;
+  makeRegistration: FormGroup;
 
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { }
 
-  constructor() { }
-
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
+    this.makeRegistration = this.formBuilder.group({
+      amount: ["amount"]
+    });
+  }
+  getAmount(){
+    console.log(this.makeRegistration.value.amount);
+    this.amount = this.makeRegistration.value.amount;
 
     PayUnit({
       merchantName: environment.merchantName,
@@ -30,12 +41,19 @@ export class PaymentComponent implements AfterViewInit {
       description: environment.description,
       currency: environment.currency,
       purchaseRef: environment.purchaseRef,
-      total_amount: environment.total_amount,
-      amount: environment.amount,
+      total_amount: this.amount,
+      amount: this.amount,
       name: environment.name
     });
-
+    
   }
+
+  // ngAfterViewInit(): void {
+  //   console.log(this.amount);
+    
+   
+
+  // }
 
 
 }

@@ -16,7 +16,7 @@ export const environment = {
   x_api_key: '8fed05e7e34c97afc6332a121cc12d8beb87c635',
   mode: 'test',
   currency: 'XAF',
-  return_url: 'http://127.0.0.1:4200/success',
+  return_url: 'http://127.0.0.1:4200/#/success',
   notify_url: 'http://192.168.100.10/seven-payunit-sandbox/notify',
   description: 'Online payment of registration',
   purchaseRef: '7dg87sfd8adasf8798',
